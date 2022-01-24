@@ -5,8 +5,8 @@ import javax.persistence.*
 @Entity
 @Table(name = "tags")
 data class Tag(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = null,
-    var name: String? = null,
+    @Id @Column(name = "id") @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = null,
+    @Column(name = "name") var name: String? = null,
 
     @ManyToMany(cascade = [(CascadeType.ALL)], fetch = FetchType.LAZY, mappedBy = "tags")
 //    @JoinTable(name = "tags_post",
